@@ -1,15 +1,15 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "name": "System Admin",
-      "email": "admin@crudtask.com",
-      "password": "Admin123!",
+      "email": "admin@admin.com",
+      "password": "1",
       "role": "admin",
       "createdAt": "2026-02-02T00:00:00.000Z"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Demo User",
       "email": "user2@user.com",
       "password": "2",
@@ -22,7 +22,7 @@
       "password": "User123!",
       "role": "user",
       "createdAt": "2026-02-02T14:48:00.254Z",
-      "id": 3
+      "id": "3"
     }
   ],
   "tasks": [
@@ -36,7 +36,7 @@
       "userId": 2,
       "createdAt": "2026-02-02T15:50:59.722Z",
       "updatedAt": "2026-02-02T15:51:42.331Z",
-      "id": 1
+      "id": "1"
     },
     {
       "title": "Tarea User 2",
@@ -48,19 +48,7 @@
       "userId": 2,
       "createdAt": "2026-02-02T15:51:30.170Z",
       "updatedAt": "2026-02-02T15:52:00.858Z",
-      "id": 2
-    },
-    {
-      "title": "Tarea User 3",
-      "category": "Other",
-      "priority": "High",
-      "status": "completed",
-      "dueDate": "2025-02-02",
-      "description": "Tarea de prueba #3",
-      "userId": 2,
-      "createdAt": "2026-02-02T15:52:47.722Z",
-      "updatedAt": "2026-02-02T17:46:07.334Z",
-      "id": 3
+      "id": "2"
     },
     {
       "title": "Tarea Santi 1",
@@ -72,7 +60,7 @@
       "userId": 3,
       "createdAt": "2026-02-02T15:53:57.434Z",
       "updatedAt": "2026-02-02T15:53:57.434Z",
-      "id": 4
+      "id": "4"
     },
     {
       "title": "Tarea Santi 2",
@@ -84,7 +72,7 @@
       "userId": 3,
       "createdAt": "2026-02-02T15:54:25.794Z",
       "updatedAt": "2026-02-02T15:54:25.794Z",
-      "id": 5
+      "id": "5"
     },
     {
       "title": "Tarea Santi 3",
@@ -96,7 +84,7 @@
       "userId": 3,
       "createdAt": "2026-02-02T15:54:51.026Z",
       "updatedAt": "2026-02-02T15:56:12.341Z",
-      "id": 6
+      "id": "6"
     },
     {
       "id": "3f99",
