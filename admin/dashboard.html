@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <script src="./JavaScript/guard.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        background: #f6f8f5;
+        font-family: system-ui;
+      }
+      .sidebar {
+        width: 240px;
+        min-height: 100vh;
+        background: #fff;
+        border-right: 1px solid #e5e7eb;
+        display: flex;
+        flex-direction: column;
+      }
+      .brand {
+        font-size: 20px;
+        font-weight: 700;
+        padding: 20px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+      .nav-link {
+        margin: 5px 12px;
+        border-radius: 8px;
+        color: #374151;
+      }
+      .nav-link.active {
+        background: #e6f9ef;
+        color: #16a34a;
+        font-weight: 600;
+      }
+      .topbar {
+        background: #fff;
+        border-bottom: 1px solid #e5e7eb;
+        padding: 15px 25px;
+      }
+      .btn-green {
+        background: #22c55e;
+        color: white;
+        border-radius: 10px;
+        font-weight: 600;
+      }
+      .badge-soft {
+        background: #eef2f7;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+      }
+      .status-green {
+        color: #16a34a;
+        font-weight: 600;
+      }
+      .product-img {
+        width: 42px;
+        height: 42px;
+        background: #e5e7eb;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+
+  <body class="d-flex">
+    <!--SIDEBAR-->
+    <aside class="sidebar">
+      <a class="navbar-brand d-flex align-items-center mx-3 my-5" href="#">
+        <div class="me-2"><img src="../img/logos/logo1.png" alt="Icono" /></div>
+        <span class="fw-bold fs-4">CRUDZASO</span>
+      </a>
+
+      <nav
+        class="nav nav-pills d-flex flex-column align-items-center"
+        role="tablist"
+      >
+        <a
+          class="nav-link mb-3 active"
+          data-bs-toggle="tab"
+          href="#products-section"
+          role="tab"
+          >Dashboard</a
+        >
+        <a
+          class="nav-link mb-3"
+          data-bs-toggle="tab"
+          href="#orders-section"
+          role="tab"
+          >My Tasks</a
+        >
+        <a
+          class="nav-link mb-3"
+          data-bs-toggle="tab"
+          href="#customers-section"
+          role="tab"
+          >Profile</a
+        >
+      </nav>
+
+      <footer class="mt-auto p-3">
+        <button class="btn btn-outline-secondary w-100" id="btnLogOut">
+          Log Out
+        </button>
+      </footer>
+    </aside>
+
+    <!--MAIN-->
+    <main class="flex-grow-1">
+      <header class="topbar d-flex justify-content-between align-items-center">
+        <h4 class="fw-bold mb-0">Inventory Management</h4>
+
+        <div class="d-flex gap-3 align-items-center">
+          <input
+            class="form-control"
+            placeholder="Search"
+            style="width: 220px"
+          />
+          <i class="bi bi-bell fs-5"></i>
+          <div class="d-flex align-items-center gap-2">
+            <img
+              src="https://i.pravatar.cc/40"
+              class="rounded-circle"
+              alt="Admin Avatar"
+            />
+            <div>
+              <strong>Admin User</strong><br />
+              <small class="text-muted">Store Manager</small>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="p-4">
+        <div class="tab-content">
+          <article
+            class="tab-pane fade show active"
+            id="products-section"
+            role="tabpanel"
+          >
+            <header class="d-flex justify-content-between mb-3">
+              <div class="d-flex gap-2">
+                <button class="btn btn-dark btn-sm">All Products</button>
+                <button class="btn btn-light btn-sm">Men's Gear</button>
+                <button class="btn btn-light btn-sm">Women's Gear</button>
+              </div>
+              <a href="../editar/editar.html">
+                <button class="btn btn-green">add product</button>
+              </a>
+            </header>
+
+            <table class="table align-middle">
+              <thead>
+                <tr>
+                  <th>TASK NAME</th>
+                  <th>ASSIGNES</th>
+                  <th>STATUS</th>
+                  <th>PRIORITY</th>
+                  <th>DUE DATE</th>
+                  <th>ACTIONS</th>
+                </tr>
+              </thead>
+              <tbody id="productsTable">
+                <!--Productos ingresados-->
+              </tbody>
+            </table>
+          </article>
+
+          <article class="tab-pane fade" id="orders-section" role="tabpanel">
+            <h4 class="fw-bold mb-3">Orders</h4>
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td>#ORD-1023 - Tennis Shoes</td>
+                </tr>
+              </tbody>
+            </table>
+          </article>
+
+          <article class="tab-pane fade" id="customers-section" role="tabpanel">
+            <header
+              class="d-flex justify-content-between align-items-center mb-4"
+            >
+              <h4 class="fw-bold mb-0">Profile</h4>
+            </header>
+
+            <div class="card border-0 shadow-sm mb-4">
+              <div class="card-body p-4">
+                <h6 class="fw-bold mb-3">Datos del Usuario</h6>
+                <form id="adminForm" class="row g-3">
+                  <div class="col-md-3">
+                    <label class="form-label small text-muted">Nombre</label>
+                    <input
+                      type="text"
+                      class="form-control bg-light border-0"
+                      id="userName"
+                    />
+                  </div>
+                  <div class="col-md-3">
+                    <label class="form-label small text-muted">Apellido</label>
+                    <input
+                      type="text"
+                      class="form-control bg-light border-0"
+                      id="userLastName"
+                    />
+                  </div>
+                  <div class="col-md-3">
+                    <label class="form-label small text-muted">Username</label>
+                    <input
+                      type="text"
+                      class="form-control bg-light border-0"
+                      id="userNickName"
+                    />
+                  </div>
+                  <div class="col-md-3">
+                    <label class="form-label small text-muted"
+                      >Contraseña</label
+                    >
+                    <input
+                      type="password"
+                      class="form-control bg-light border-0"
+                      id="userPass"
+                    />
+                  </div>
+                  <div class="col-12 text-end mt-3">
+                    <button
+                      type="button"
+                      id="addUserBtn"
+                      class="btn btn-green px-4"
+                    >
+                      Agregar usuario
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div class="card border-0 shadow-sm">
+              <div class="card-body p-0">
+                <table class="table table-hover align-middle mb-0">
+                  <thead class="bg-light">
+                    <tr>
+                      <th class="ps-4">NOMBRE</th>
+                      <th>APELLIDO</th>
+                      <th>NICKNAME</th>
+                      <th>PASSWORD</th>
+                      <th class="text-end pe-4">ACCIONES</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tableBody">
+                    <!--Usuarios ingresados-->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- <script src="./JavaScript/dash.js"></script>
+    <script src="./JavaScript/admin-crud.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </body>
+</html>

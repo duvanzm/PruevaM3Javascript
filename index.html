@@ -4,6 +4,130 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inicio</title>
+
+    <!-- Bootstrap@5.3.8 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
   </head>
-  <body></body>
+  <body>
+    <div class="container my-5">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-4">
+          <!-- Start Form sing in -->
+          <div
+            class="d-flex justify-content-center gap-2 m-3 align-items-center"
+          >
+            <img
+              src="img/logos/logo1.png"
+              class="rounded-3"
+              style="background: #656c76"
+              alt=""
+            />
+            <h2>CRUDZASO</h2>
+          </div>
+          <form id="form-in" class="d-block">
+            <div class="card p-5">
+              <div class="card-title text-center">
+                <h2>Welcome back</h2>
+                <span>Enter your credentials to access the platform</span>
+              </div>
+              <div class="card-body">
+                <div class="mb-3">
+                  <label for="" class="form-label">Email or username</label>
+                  <input
+                    type="text"
+                    name="user"
+                    class="form-control"
+                    placeholder="student@university.edu"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="" class="form-label">Password</label>
+                  <input
+                    type="password"
+                    name="password"
+                    class="form-control"
+                    placeholder="password"
+                  />
+                </div>
+
+                <a class="d-flex justify-content-end" href="#"
+                  >Forgot password?</a
+                >
+                <button type="submit" class="btn btn-primary w-100 mt-4">
+                  sing In
+                </button>
+                <div class="d-flex justify-content-center m-4 gap-2">
+                  <span>Don´t have an account?</span>
+                  <a id="up" href="#" onclick="singUp()">Register</a>
+                </div>
+
+                <div class="alert-acceso"></div>
+              </div>
+            </div>
+          </form>
+          <!-- End Form sing in -->
+          <!--Start Form sing up -->
+          <form id="form-up" class="d-none">
+            <div class="card p-5">
+              <div class="card-title text-center">
+                <h2>Create account</h2>
+                <span>Join the academic performance platform today</span>
+              </div>
+              <div class="card-body">
+                <div class="mb-3">
+                  <label for="" class="form-label">Full name</label>
+                  <input
+                    name="name"
+                    type="text"
+                    class="form-control"
+                    placeholder="John Doe"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="" class="form-label">Email adress</label>
+                  <input
+                    name="email"
+                    type="text"
+                    class="form-control"
+                    placeholder="student@university.edu"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="" class="form-label">Password</label>
+                  <input
+                    name="password"
+                    type="password"
+                    class="form-control"
+                    placeholder="Create a password"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="" class="form-label">Confirm Password</label>
+                  <input
+                    name="passwordCofirm"
+                    type="password"
+                    class="form-control"
+                    placeholder="Confirm password"
+                  />
+                </div>
+                <button class="btn btn-primary w-100 mt-3">Register</button>
+                <div class="d-flex justify-content-center m-4 gap-2">
+                  <span>Already have an account? </span>
+                  <a id="in" href="#" onclick="singIn()"> Sign in</a>
+                </div>
+                <div class="register"></div>
+              </div>
+            </div>
+          </form>
+          <!--End Form sing up -->
+        </div>
+      </div>
+    </div>
+    <script type="module" src="app.js"></script>
+  </body>
 </html>
